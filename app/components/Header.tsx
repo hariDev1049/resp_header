@@ -4,6 +4,11 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import Link from 'next/link';
 import { useState } from 'react';
 import { navelements } from '../Utils/navElements';
+import {
+  AiOutlineFacebook,
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+} from 'react-icons/ai';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +51,7 @@ const Header = () => {
         className={`${
           isOpen
             ? 'w-full h-full flex flex-col gap-16 py-10 justify-items-center ease-in duration-500 sm:hidden'
-            : 'ease-in duration-500 hidden'
+            : ' hidden'
         }`}
       >
         {navelements.map((nav) => (
@@ -59,6 +64,11 @@ const Header = () => {
             {nav.name}
           </Link>
         ))}
+        <div className="flex gap-10 justify-center text-xl">
+          <AiOutlineFacebook />
+          <AiOutlineTwitter />
+          <AiOutlineInstagram />
+        </div>
       </div>
     </nav>
   );
